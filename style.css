@@ -1,0 +1,159 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-image: url("m1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+.center{
+display: flex;
+justify-content: center;
+}
+/* form design */
+.c{
+    background-color:white;
+    margin-top:15%;
+    padding: 40px;
+    border-radius: 10px;
+    width: 50%;
+}
+form{
+    padding: 30px;
+
+}
+input{
+    padding: 7px;
+    width: 100%;
+    border-radius: 5px;
+    outline:none;
+    border:2px solid black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+input:hover{
+    border:2px solid blue;
+}
+input::placeholder{
+    color:darkcyan;
+    font-size: 1.2em;
+}
+label{
+    font-size:1.2em;
+}
+label:hover{
+color:darkmagenta;
+}
+#text1,#text2{
+    color: red;
+}
+button{
+    padding:5px 50px 5px 50px;
+    text-transform:capitalize;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    outline:none;
+    cursor: pointer;
+}
+button:hover{
+    color: darkgrey;
+    background-color: blue;
+}
+button:active{
+    color: blue;
+    background-color: lightskyblue;
+}
+/* qr code design */
+#scan{
+    display: none;
+}
+#t{
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+.container{
+    margin-top: 10%;
+}
+#down{
+    display: none;
+}
+#t2{
+    text-align: center;
+    text-transform: capitalize;
+    display: none;
+}
+/*print or download */
+@media print{
+    .container{
+    margin-top: 240px;
+    margin-bottom: 240px;
+} 
+#t2{
+    display: block;
+    font-size:45px;
+    margin-bottom: 10px;
+}
+body{
+    position: absolute;
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+    top: 0%;
+    border: 2px solid black;
+}
+#scan{
+    display: block;
+    text-align: center;
+    font-size:50px;
+}
+    #t{
+        font-size:70px;
+        margin-bottom: 10px;
+    }
+    #down{
+        visibility: hidden;
+    }
+}
+/* media screen for form */
+@media (min-width:376px) and  (max-width:710px) {
+   
+    .c{
+        width:90%;
+        margin:15% 4px 0px 0px;
+    }    
+    #text1,#text2{
+        font-size: 15px;
+    }
+}
+@media (max-width:375px) {
+    .c{
+        width:90%;
+        margin:15% 4px 0px 0px;
+    }
+    form{
+        margin-left: -40px;
+        width: 135%;
+    }  
+    #text1,#text2{
+        font-size: 15px;
+    }  
+}
+@media (min-width:711px) {
+    .c{
+        width:60%;
+        margin:7% 4px 0px 0px;
+    }
+}
+/* test */
+#qrdata{
+    border-radius: 50px;
+}

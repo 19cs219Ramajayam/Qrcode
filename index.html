@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="center">
+        <div class="c" id="r">
+            <h2 style="text-align: center;text-decoration: underline;font-size: 40px;">qrcode</h2>
+    <form action="">
+        <label for="title">Title<br>
+            <input type="text" name="title" id="title" placeholder="Title">
+        </label><br>
+        <p id="text1"></p>
+        <label for="title2">Title 2<br>
+            <input type="text" name="title2" id="title2" placeholder="Title 2">
+        </label><br>
+        <p id="text1"></p>
+        <label for="website">website<br>
+            <input type="text" name="website" id="website" placeholder="Website Url or Information">
+        </label><br>
+        <p id="text2"></p>
+    </form>
+    <div class="center">
+        <button onclick="c()" type="submit" id="s">process</button>
+    </div>
+</div>
+</div>
+<div class="container">
+<p id="t"></p>
+<p id="t2"></p>
+<h2 id="scan">Scan Me</h2>
+<br>
+<div class="center">
+    <p id="qrdata"></p>
+</div>
+<br>
+<div class="center">
+<button onclick="download()" id="down">download</button>
+</div>
+</div>
+<script src="qrcode.min.js"></script>
+    <script>
+       var title=document.getElementById("title");
+       var title2=document.getElementById("title2");
+        var website=document.getElementById("website");
+        var t=document.getElementById("t");
+        var t2=document.getElementById("t2");
+        var qr=new QRCode(document.getElementById("qrdata"));
+        var move=document.getElementById("r");
+        function c(){
+            if(title.value==""){
+                document.getElementById("text1").innerHTML="Fill The Title !";
+            }else if(website.value==""){
+                document.getElementById("text2").innerHTML="Fill The Website Url Or Information !";
+                document.getElementById("text1").innerHTML="";
+            }else{
+                document.getElementById("text2").innerHTML="";
+                document.getElementById("text1").innerHTML="";
+            move.style.display="none";
+            t.innerHTML=title.value;
+            t2.innerHTML=title2.value;
+            qr.makeCode(website.value);
+            document.getElementById("down").style.display="block";
+            }
+        }
+        function download(){
+            window.print();
+        }
+    </script>
+</body>
+</html>
